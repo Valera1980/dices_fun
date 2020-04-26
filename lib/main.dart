@@ -1,3 +1,4 @@
+import 'package:dicesfun/components/DicePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,17 +11,13 @@ class ScaffoldWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.red,
         appBar: AppBar(
           title: Text('dices'),
           backgroundColor: Colors.red.shade400,
           centerTitle: true,
         ),
-        body: Row(
-          children: <Widget>[
-            Text('Left'),
-            Text('Right'),
-          ],
-        ),
+        body: DicePage()
       ),
     );
   }
