@@ -13,7 +13,7 @@ class ScaffoldWrapper extends StatelessWidget {
       home: Scaffold(
           backgroundColor: Colors.red,
           appBar: AppBar(
-            title: Text('dices'),
+            title: Text('Dices'),
             backgroundColor: Colors.red.shade400,
             centerTitle: true,
           ),
