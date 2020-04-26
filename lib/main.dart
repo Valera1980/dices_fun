@@ -11,14 +11,13 @@ class ScaffoldWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text('dices'),
-          backgroundColor: Colors.red.shade400,
-          centerTitle: true,
-        ),
-        body: DicePage()
-      ),
+          backgroundColor: Colors.red,
+          appBar: AppBar(
+            title: Text('dices'),
+            backgroundColor: Colors.red.shade400,
+            centerTitle: true,
+          ),
+          body: DicePage()),
     );
   }
 }

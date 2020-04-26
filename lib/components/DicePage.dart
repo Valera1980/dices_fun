@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class DicePage extends StatelessWidget {
   @override
@@ -7,16 +8,19 @@ class DicePage extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            child:  Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: new Image(
-                image: AssetImage('images/dice1.png'),
-              ),
+              child: FlatButton(
+                onPressed: () {
+                  print('image 1 pressed');
+                },
+                child: new Image(
+                 image: AssetImage('images/dice1.png'),
             ),
-          ),
+          )),
           Expanded(
-            child:  Padding(
-              padding: const EdgeInsets.all(8.0),
+            child: FlatButton(
+              onPressed: () {
+                print('image 2 pressed');
+              },
               child: new Image(
                 image: AssetImage('images/dice2.png'),
               ),
