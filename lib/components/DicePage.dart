@@ -1,3 +1,4 @@
+import 'package:dicesfun/utils/random-generator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,11 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-  int leftNumber  = 1;
+
+  RandomGenerator _randomGeneratorOne = new RandomGenerator(1, 6);
+  RandomGenerator _randomGeneratorTwo = new RandomGenerator(1, 6);
+  int leftNumber  = new RandomGenerator(1, 6).genetate();
+  int rightNumber  = new RandomGenerator(1, 6).genetate();
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -18,7 +23,7 @@ class _DicePageState extends State<DicePage> {
             onPressed: () {
               print('image 1 pressed');
               setState(() {
-                leftNumber = 6;
+                this.generateNumbers();
               });
             },
             child: new Image(
@@ -28,15 +33,21 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('image 2 pressed');
+                 this.generateNumbers();
               },
               child: new Image(
-                image: AssetImage('images/dice2.png'),
+                image: AssetImage('images/dice$rightNumber.png'),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+  void generateNumbers() {
+    setState(() {
+      leftNumber = _randomGeneratorOne.genetate();
+      rightNumber = _randomGeneratorTwo.genetate();
+    });
   }
 }
